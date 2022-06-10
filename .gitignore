@@ -1,0 +1,6 @@
+# Directories
+virtual_env/
+__pycache__/
+
+# Files
+.pre-commit-config.yaml
