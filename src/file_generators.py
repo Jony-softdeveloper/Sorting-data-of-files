@@ -167,7 +167,6 @@ class TSVFileGenerator(FileGenerator):
             Each position of the list is a metadada or header.
         """
         with open(self.file, 'w', encoding="utf-8") as file:
-            # str_headers:str = headers[0] + '\t'.join(headers[1:])
             file.write('\t'.join(headers))
             file.write('\n')
 
@@ -183,8 +182,10 @@ class TSVFileGenerator(FileGenerator):
             other list, is a record/row of the file.
         """
         with open(self.file, 'a', encoding="utf-8") as file:
-            for line in data:
+            num_records: int = len(data) - 1
+            for records_counter, line in enumerate(data):
                 for value in line:
                     # if value is not None:
                     file.write(f"{value if value is not None else ''}\t")
-                file.write('\n')
+                if records_counter < num_records:
+                    file.write('\n')

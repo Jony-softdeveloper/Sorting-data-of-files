@@ -4,6 +4,7 @@ Notes
 -----
 It was programmed in python 3.10.4 (One of the latest versions).
 Author: Jonathan García.
+Date: June, 2022.
 
 The OOP programming paradigm was used to implement the reading and
 writing of files. Using the factory pattern to be able of read the

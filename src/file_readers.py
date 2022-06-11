@@ -1,6 +1,7 @@
 """Module that contains the file readers classes and interface."""
 from abc import ABCMeta, abstractmethod
 from collections.abc import Iterator
+from csv import reader
 from os import stat
 
 from ijson import kvitems, parse
@@ -186,10 +187,10 @@ class CSVFileReader(FileReader):
             Iterator with a list related to one data of the file
             at a time.
         """
-        with open(f'{self.path}{self.file_name}', encoding="utf-8") as file:
+        with open(f'{self.path}{self.file_name}', encoding="utf-8", newline='') as file:
             next(file)
-            for line in file:
-                yield line.rstrip('\n').split(',')
+            for line in reader(file):
+                yield line
 
 
 class JSONFileReader(FileReader):
@@ -221,7 +222,7 @@ class JSONFileReader(FileReader):
         begin_headers: bool = False
         # print(f'{self.file_name} - {self.size} MB\n')
 
-        with open(f'{self.path}{self.file_name}', 'rb', encoding="utf-8") as file:
+        with open(f'{self.path}{self.file_name}', 'rb') as file:
             parser: tuple = parse(file, buf_size=2048)  # Just read 2k for time
             # Prefix: the name of the obj. processed at the moment
             # Event: indicate if an object/array begins (start_) or
@@ -255,7 +256,7 @@ class JSONFileReader(FileReader):
         """
         raw_data: list[str] = []
 
-        with open(f'{self.path}{self.file_name}', 'rb', encoding="utf-8") as file:
+        with open(f'{self.path}{self.file_name}', 'rb') as file:
             items_kv: Iterator = kvitems(file, 'fields.item', buf_size=512)  # Just read 512 b for time
             for _, value in items_kv:
                 raw_data.append(value)
