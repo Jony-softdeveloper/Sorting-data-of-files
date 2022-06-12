@@ -246,7 +246,10 @@ class ProcessData:
             if len(sorting) > 52000:  # Estimated to use approx 2Gb RAM with python 3.10 (memory-profiler)
                 # Write this data in the output file
                 file_writer: type[WriteData] = WriteData()
-                sorting.sort(key=lambda data: data[0:2])
+                try:
+                    sorting.sort(key=lambda data: data[0:3])
+                except TypeError:
+                    sorting.sort(key=lambda data: data[0])
                 print(
                     f"52 thousand records of {len(self._file_names)}have been reading.\n "
                     "Please wait: writing data in 'result' file...")
@@ -261,7 +264,10 @@ class ProcessData:
                     sorting.append(data)
 
         # At this point it only sorts by the first three headers: D1-D3
-        sorting.sort(key=lambda data: data[0:3])
+        try:
+            sorting.sort(key=lambda data: data[0:3])
+        except TypeError: # Only use D1 for sort
+            sorting.sort(key=lambda data: data[0])
 
         return partial_write, sorting
 
