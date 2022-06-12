@@ -80,12 +80,11 @@ Besides, it is possible to work in different (data) directories (Enter the absol
 
 ![Other Data](https://github.com/Jony-softdeveloper/Sorting-data-of-files/blob/main/images/5%20Process%20other%20data.png)
 
-![Respuesta 2](https://github.com/Jony-softdeveloper/Questions_PokeAPI/blob/main/images/Question_2.png)
-
 <br/>
 
 ## **Performance**
-The performance is acceptable. Considering that my laptop is ten years old right now:
+The performance is acceptable. Considering that my laptop is ten years old right now.
+
 Some CPU specifications (_cat /proc/cpuinfo_ && _lscpu_):
 * model name	: AMD A4-3300M APU with Radeon(tm) HD Graphics
 * cpu MHz		: 1031.560
@@ -97,6 +96,7 @@ Some CPU specifications (_cat /proc/cpuinfo_ && _lscpu_):
 With 8 GB of RAM (DDR3).
 
 With provided data takes around **10 ms** to process them.
+
 Execute it two times (measure with _perf_counter_ns()_ of _time_ module).
 
 ![Performance Data 1](https://github.com/Jony-softdeveloper/Sorting-data-of-files/blob/main/images/6%20Measure%201%20data.png)
