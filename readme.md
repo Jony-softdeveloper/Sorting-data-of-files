@@ -106,6 +106,7 @@ Execute it two times (measure with _perf_counter_ns()_ of _time_ module).
 A second directory 'data2_test' with two more files: hola.txt (ignored by the program) and json_data_2 (with about 2900 more records). Also, 'csv_data_1' was edited to have 4005 records/rows, but withouh header 'M2'. That is, **about 7000 data were processed**.
 
 This times, it was measure with 'time' command too.
+
     > time python main.py
 
 ![Performance Other data 1](https://github.com/Jony-softdeveloper/Sorting-data-of-files/blob/main/images/8%20Measure%201%20data2.png)
