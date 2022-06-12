@@ -112,7 +112,7 @@ This times, it was measure with 'time' command too.
 
 ![Performance Other data 2](https://github.com/Jony-softdeveloper/Sorting-data-of-files/blob/main/images/9%20Measure%202%20data2.png)
 
-With an average of **31 ms**. That match with _user_ + _sys_ times ≈ **41 ms**.
+With an average of **310 ms**. That match with _user_ + _sys_ times ≈ **410 ms**.
 
 <br/>
 
