@@ -95,7 +95,7 @@ Some CPU specifications (_cat /proc/cpuinfo_ && _lscpu_):
 * «Socket(s)»   : 1
 With 8 GB of RAM (DDR3).
 
-With provided data takes around **10 ms** to process them.
+With provided data takes around **10 ms** to process them and generate the tsv file.
 
 Execute it two times (measure with _perf_counter_ns()_ of _time_ module).
 
@@ -103,7 +103,7 @@ Execute it two times (measure with _perf_counter_ns()_ of _time_ module).
 
 ![Performance Data 2](https://github.com/Jony-softdeveloper/Sorting-data-of-files/blob/main/images/7%20measure%202%20data.png)
 
-A second directory 'data2_test' with two more files: hola.txt (ignored by the program) and json_data_2 (with about 2900 more records). Also, 'csv_data_1' was edited to have 4005 records/rows, but withouh header 'M2'. That is, about 7000 data were processed.
+A second directory 'data2_test' with two more files: hola.txt (ignored by the program) and json_data_2 (with about 2900 more records). Also, 'csv_data_1' was edited to have 4005 records/rows, but withouh header 'M2'. That is, **about 7000 data were processed**.
 
 This times, it was measure with 'time' command too.
     > time python main.py
@@ -112,7 +112,7 @@ This times, it was measure with 'time' command too.
 
 ![Performance Other data 2](https://github.com/Jony-softdeveloper/Sorting-data-of-files/blob/main/images/9%20Measure%202%20data2.png)
 
-With and average of **31 ms**. That match with _user_ + _sys_ times ≈ **41 ms**.
+With an average of **31 ms**. That match with _user_ + _sys_ times ≈ **41 ms**.
 
 <br/>
 
@@ -126,13 +126,9 @@ With and average of **31 ms**. That match with _user_ + _sys_ times ≈ **41 ms*
 
 ## Credits
 
-<hr/>
-
 Author: Jonathan Garcia S. @Jony-softdeveloper
 
 ## License
-
-<hr/>
 
 This project is [licensed] under the terms of the **MIT License**.
 
